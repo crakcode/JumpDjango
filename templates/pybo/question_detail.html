@@ -1,3 +1,20 @@
 <h1>{{question.subject}}</h1>
 <h3>{{question.content}}</h3>
 
+
+{% for answer in question.answer_set.all %}
+    <li>{{answer.content}}</li>
+{% endfor %}
+
+
+<h2>Make Answer</h2>
+<form action="{% url 'pybo:answer_create' question.id %}" method="POST">
+{% csrf_token %}
+<textarea name="content" id="content" rows="15"></textarea>
+<input type="submit" value="submit">
+</form>
+
+
+
+
+
