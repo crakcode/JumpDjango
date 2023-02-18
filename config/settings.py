@@ -8,6 +8,12 @@ https://docs.djangoproject.com/en/3.1/topics/settings/
 
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
+
+
+DIRS : BASE_DIR
+
+BASE_DIR의 경우 현재 위치를 가르킨다. DIRS에서 템플릿 디렉토리의 location을 설정한다.
+
 """
 
 from pathlib import Path
@@ -55,7 +61,7 @@ ROOT_URLCONF = 'config.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
